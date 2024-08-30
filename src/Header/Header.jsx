@@ -1,32 +1,53 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import { Breadcrumb, Layout, Menu, theme,Avatar } from 'antd';
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
 const { Header } = Layout;
 import ImgReport from '../assets/report.png'
+import ImgHome from '../assets/3d-house.png'
+import ImgDash from '../assets/dashboard.png'
 
 const CustomHeader = ({ collapsed, toggleCollapsed }) => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
-  const items1 = ['1', '2', '3'].map((key) => ({
-    key,
-    label: `nav ${key}`,
-  }));
-  const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map((icon, index) => {
-    const key = String(index + 1);
+
+  const [PageHeader, setPageHeader] = useState('');
+  const url = window.location.href;
+  const partweb = url.split('/').pop().split('?')[0];
+
+  useEffect(() => {
+    if (partweb === 'zPO') {
+      setPageHeader(
+        <span style={stylePageHeader()}>
+          <Avatar src={ImgReport} shape="square" />&nbsp;zPO Summary Report
+        </span>
+      );
+    } else if (partweb === 'PoSummary') {
+      setPageHeader(
+        <span style={stylePageHeader()}>
+          <Avatar src={ImgDash} shape="square" />&nbsp;APPLE INC. PO Summary (zeEDI)
+        </span>
+      );
+    } else {
+      setPageHeader(
+        <span style={stylePageHeader()}>
+          <Avatar src={ImgHome} shape="square" />&nbsp;Common System
+        </span>
+      );
+    }
+  }, []); // เพิ่ม 'partweb' ใน dependency array ถ้า 'partweb' มีการเปลี่ยนแปลง
+  
+  const stylePageHeader = () => {
     return {
-      key: `sub${key}`,
-      icon: React.createElement(icon),
-      label: `subnav ${key}`,
-      children: new Array(4).fill(null).map((_, j) => {
-        const subKey = index * 4 + j + 1;
-        return {
-          key: subKey,
-          label: `option${subKey}`,
-        };
-      }),
+      display: 'flex', // ใช้ Flexbox เพื่อจัดตำแหน่ง
+      alignItems: 'center', // จัดให้ข้อความอยู่กลางในแนวตั้ง
+      marginLeft: '16px', // เพิ่มช่องว่างด้านซ้ายของข้อความ
+      fontSize: '22px', // ขนาดฟอนต์
+      fontWeight: 'bold', // หนักของฟอนต์
+      color: '#fff'
     };
-  });
+  };
+  
   return (
     <Header
     style={{
@@ -42,14 +63,8 @@ const CustomHeader = ({ collapsed, toggleCollapsed }) => {
     }}
   >
     <div className="demo-logo" />
-    <span style={{
-        marginLeft: '16px', // เพิ่มช่องว่างด้านซ้ายของข้อความ
-        fontSize: '22px', // ขนาดฟอนต์
-        fontWeight: 'bold', // หนักของฟอนต์
-        color:'#fff'
-      }}>
-       <Avatar src={ImgReport} shape="square" />&nbsp;zPO Summary Report
-      </span>
+
+      {PageHeader}
   </Header>
   );
 };

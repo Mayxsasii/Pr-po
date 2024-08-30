@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Layout } from 'antd';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Header/Header';
-import Page2 from './zPo/zPO_Report';
+import ZPo from './zPo/zPO_Report';
+import PoSummary from './PO Summary/PoSummary';
 import axios from "axios";
 
 const { Content } = Layout;
@@ -25,7 +26,8 @@ const App = () => {
         <Layout >
           <Content style={{ padding: '90px 15px 30px 15px', minHeight: '100vh', height:'' }}>
             <Routes>
-              <Route path="/CommonSystem/zPO" element={<Page2 />} />
+              <Route path="/CommonSystem/zPO" element={<ZPo />} />
+              <Route path="/CommonSystem/PoSummary" element={<PoSummary/>} />
             </Routes>
           </Content>
         </Layout>

@@ -557,12 +557,14 @@ function Fn_zPO_Report() {
   };
 
   const Search860 = (date860) => {
+    console.log('เข้า' ,date860);
     axios
       .post("/api/common/Search860", {
         PoNo: txtPono,
         Date860: date860,
       })
       .then((res) => {
+        console.log(res.data)
         setTimeout(() => {
           setLoadingModal(false);
           setdataTable860(res.data);
