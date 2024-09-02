@@ -81,7 +81,7 @@ function Fn_zPO_Report() {
       title: "Order Qty",
       key: "Order Qty",
       dataIndex: "PRT_ORDER_QTY",
-      align: "center",
+      align: "right",
       render: (text, record, index) => {
         if (index === 0 || dataTable[index - 1].PRT_ORDER_QTY !== text) {
           return text;
