@@ -97,14 +97,17 @@ function Fn_zPO_Report() {
       render: (text, record, index) => {
         if (index === 0 || dataTable[index - 1].PRT_EDI_STATUS !== text) {
           let color = "";
+          let fontcolor =''
           if (text === "CANCEL") {
             color = "#C7C8CC"; // สีสำหรับ 'CANCEL'
+            fontcolor='bLACK'
+            
           } else if (text === "CLOSE") {
             color = "green"; // สีสำหรับ 'CLOSE'
           }
 
           if (color) {
-            return <Tag color={color}>{text}</Tag>;
+            return <Tag color={color} style={{color:'black'}}>{text}</Tag>;
           }
 
           return text;
@@ -195,30 +198,35 @@ function Fn_zPO_Report() {
       dataIndex: "FETL_PO",
       key: "FETL PO No.",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: "APPLE PO No.",
       dataIndex: "APPLE_PO",
       key: "APPLE PO No.",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: "Rev.",
       key: "Rev.",
       dataIndex: "REV",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: "Refer Change No.",
       key: "Refer Change No.",
       dataIndex: "REF_CHANGE_NO",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: "Receive Date",
       key: "Receive Date",
       dataIndex: "RECEIVE_DATE",
       align: "center",
+      className: "red-border-column",
     },
 
     {
@@ -226,6 +234,7 @@ function Fn_zPO_Report() {
       key: " PO Date",
       dataIndex: "PO_DATE",
       align: "center",
+      className: "red-border-column",
     },
 
     {
@@ -233,6 +242,7 @@ function Fn_zPO_Report() {
       key: " APPLE Request Date",
       dataIndex: "APPLE_REQ_DATE",
       align: "center",
+      className: "red-border-column",
     },
 
     {
@@ -240,6 +250,7 @@ function Fn_zPO_Report() {
       key: "Change Qty",
       dataIndex: "CHANGE_QTY",
       align: "right",
+      className: "red-border-column",
     },
 
     {
@@ -247,12 +258,14 @@ function Fn_zPO_Report() {
       key: "APPLE Part No.",
       align: "center",
       dataIndex: "APPLE_PART_NO",
+      className: "red-border-column",
     },
     {
       title: "APPLE Part Desc.",
       dataIndex: "APPLE_PART_DESC",
       key: "APPLE Part Desc.",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: "Change Type",
@@ -268,36 +281,42 @@ function Fn_zPO_Report() {
       dataIndex: "FETL_PO",
       key: "FETL PO No.",
       align:'center',
+      className: "red-border-column",
     },
     {
       title: "Receive Date",
       dataIndex: "RECEIVE_DATE",
       key: "Receive Date",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: "Partner DO No.",
       key: "Partner DO No.",
       dataIndex: "PARTNER_DO",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: "APPLE return PO No.",
       key: "APPLE return PO No.",
       dataIndex: "APPLE_RETUEN_PO",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: "Ship Date",
       key: "Ship Date",
       dataIndex: "SHIP_DATE",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: "Ship Qty",
       key: "Ship Qty",
       dataIndex: "SHIP_QTY",
       align: "right",
+     
     },
   ];
 
@@ -306,38 +325,45 @@ function Fn_zPO_Report() {
       title: "FETL PO No.",
       dataIndex: "FETL_PO",
       key: "FETL PO No",
-      align:'center'
+      align:'center',
+      className: "red-border-column",
     },
     {
       title: "APPLE PO No.",
       dataIndex: "APPLE_PO",
       key: "APPLE PO No.",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: "Send Date",
       key: "Send Date",
       dataIndex: "SEND_DATE",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: "GR No.",
       key: "GR No.",
       dataIndex: "GR_NO",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: "DO No.",
       key: "DO No.",
       dataIndex: "DO_NO",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: "Proforma Invoice",
       key: "Proforma Invoice",
       dataIndex: "PROFORMA_INVOICE",
       align: "center",
+      className: "red-border-column",
     },
+
     {
       title: "Transfer Qty",
       key: "Transfer Qty",
@@ -351,7 +377,9 @@ function Fn_zPO_Report() {
       title: <span>FETL PO<br/> No.</span>,
       dataIndex: "FETL_PO",
       key: "FETL PO No.",
+      className: "red-border-column",
       align:'center'
+     
       
     },
     {
@@ -359,24 +387,28 @@ function Fn_zPO_Report() {
       dataIndex: "POIH_INV_NO",
       key: "Invoice No.",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: <span>Proforma<br/> Invoice</span>,
       key: "Proforma Invoice",
       dataIndex: "POIH_PROFORMA_INV",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: <span>APPLE PO<br/> No.</span>,
       key: "APPLE PO No.",
       dataIndex: "APPLE_PO",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: <span>Receive<br/> Date</span>,
       key: "Receive Date",
       dataIndex: "POIH_SEND_DATE",
       align: "center",
+      className: "red-border-column",
     },
 
     {
@@ -384,6 +416,7 @@ function Fn_zPO_Report() {
       key: "Invoice Date",
       dataIndex: "POIH_INV_DATE",
       align: "center",
+      className: "red-border-column",
     },
 
     {
@@ -391,6 +424,7 @@ function Fn_zPO_Report() {
       key: "Curr Code",
       dataIndex: "POIH_CURR_CODE",
       align: "center",
+      className: "red-border-column",
     },
 
     {
@@ -398,6 +432,7 @@ function Fn_zPO_Report() {
       key: "Vendor name",
       dataIndex: "POIH_VENDOR_NAME",
       align: "center",
+      className: "red-border-column",
     },
 
     {
@@ -405,30 +440,36 @@ function Fn_zPO_Report() {
       key: "Vendor Addr1",
       align: "center",
       dataIndex: "POIH_VENDOR_ADDR1",
+      className: "red-border-column",
     },
     {
       title: " Vendor Addr2",
       dataIndex: "POIH_VENDOR_ADDR2",
       key: " Vendor Addr2",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: "Vendor City",
       dataIndex: "POIH_VENDOR_CITY",
       key: "Vendor City",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: <span>Vendor<br/>Postal</span>,
       dataIndex: "POIH_VENDOR_POSTAL",
       key: "Vendor Postal",
-      align:'center'
+      align:'center',
+      className: "red-border-column",
+
     },
     {
       title: <span>Vendor<br/>Country</span>,
       dataIndex: "POIH_VENDOR_COUNTRY",
       key: "Vendor Country",
       align: "center",
+      className: "red-border-column",
     },
 
     {
@@ -436,12 +477,14 @@ function Fn_zPO_Report() {
       key: "Vendor State",
       dataIndex: "POIH_VENDOR_STATE",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: <span>Ship to<br/>Name</span>,
       key: "Shipto Name",
       dataIndex: "POIH_SHIPTO_NAME",
       align: "center",
+      className: "red-border-column",
     },
 
     {
@@ -449,6 +492,7 @@ function Fn_zPO_Report() {
       key: "Bill to Name",
       dataIndex: "POIH_BILLTO_NAME",
       align: "center",
+      className: "red-border-column",
     },
 
     {
@@ -456,6 +500,7 @@ function Fn_zPO_Report() {
       key: "Bill to Code",
       dataIndex: "POIH_BILLTO_CODE",
       align: "center",
+      className: "red-border-column",
     },
 
     {
@@ -463,6 +508,7 @@ function Fn_zPO_Report() {
       key: "Payer Name",
       dataIndex: "POIH_PAYER_NAME",
       align: "center",
+      className: "red-border-column",
     },
 
     {
@@ -470,54 +516,63 @@ function Fn_zPO_Report() {
       key: "Payer Code",
       align: "center",
       dataIndex: "POIH_PAYER_CODE",
+      className: "red-border-column",
     },
     {
       title: <span>Sold to<br/>Name</span>,
       key: "Sold to Name",
       dataIndex: "POIH_SOLDTO_NAME",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: <span>Sold to<br/>Code</span>,
       dataIndex: "POIH_SOLDTO_CODE",
       key: "Sold to Code",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: <span>Unit Price<br/>Code</span>,
       dataIndex: "POID_UNIT_PRICE_CODE",
       key: "Unit Price Code",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: <span>Unit<br/>Price</span>,
       dataIndex: "POID_UNIT_PRICE",
       key: "Unit Price",
       align: "right",
+      className: "red-border-column",
     },
     {
       title: <span>APPLE<br/>part no.</span>,
       dataIndex: "POID_APPLE_PART_NO",
       key: "APPLE part no.",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: "APPLE part desc",
       dataIndex: "POID_PRODUCT_DESC",
       key: "APPLE part desc",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: "GR No.",
       dataIndex: "POID_GR_NO",
       key: "GR No.",
       align: "center",
+      className: "red-border-column",
     },
     {
       title: <span>Invoice<br/>Amount</span>,
       dataIndex: "POID_INV_AMOUNT",
       key: "Invoice Amount",
       align: "right",
+      
     },
   ];
 
@@ -534,7 +589,7 @@ function Fn_zPO_Report() {
       setLoading(false);
     } else {
       axios
-        .post("/api/common/Prt_Poz", {
+        .post("/api/zPO_Report/Prt_Poz", {
           PoNo: dataPoNo,
         })
         .then((res) => {
@@ -557,14 +612,12 @@ function Fn_zPO_Report() {
   };
 
   const Search860 = (date860) => {
-    console.log('เข้า' ,date860);
     axios
-      .post("/api/common/Search860", {
+      .post("/api/zPO_Report/Search860", {
         PoNo: txtPono,
         Date860: date860,
       })
       .then((res) => {
-        console.log(res.data)
         setTimeout(() => {
           setLoadingModal(false);
           setdataTable860(res.data);
@@ -574,7 +627,7 @@ function Fn_zPO_Report() {
 
   const Search810 = (date810) => {
     axios
-      .post("/api/common/Search810", {
+      .post("/api/zPO_Report/Search810", {
         PoNo: txtPono,
         Date810: date810,
       })
@@ -588,7 +641,7 @@ function Fn_zPO_Report() {
 
   const Search846 = (date846) => {
     axios
-      .post("/api/common/Search846", {
+      .post("/api/zPO_Report/Search846", {
         PoNo: txtPono,
         Date846: date846,
       })
@@ -602,7 +655,7 @@ function Fn_zPO_Report() {
 
   const Search856 = (date856) => {
     axios
-      .post("/api/common/Search856", {
+      .post("/api/zPO_Report/Search856", {
         PoNo: txtPono,
         Date856: date856,
       })

@@ -16,13 +16,13 @@ const CustomHeader = ({ collapsed, toggleCollapsed }) => {
   const partweb = url.split('/').pop().split('?')[0];
 
   useEffect(() => {
-    if (partweb === 'zPO') {
+    if (partweb.toUpperCase() === 'ZPO') {
       setPageHeader(
         <span style={stylePageHeader()}>
           <Avatar src={ImgReport} shape="square" />&nbsp;zPO Summary Report
         </span>
       );
-    } else if (partweb === 'PoSummary') {
+    } else if (partweb.toUpperCase() === 'POSUMMARY') {
       setPageHeader(
         <span style={stylePageHeader()}>
           <Avatar src={ImgDash} shape="square" />&nbsp;APPLE INC. PO Summary (zeEDI)

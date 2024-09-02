@@ -17,6 +17,7 @@ import {
 } from "@ant-design/icons";
 import ImgExcel from "../assets/excel.png";
 import { Fn_zPO_Report } from "./Fn_zPO_Report"
+import './Reprt.css'
 
 const { Content } = Layout;
 
@@ -106,7 +107,7 @@ const Page2 = () => {
             display: "inline-block",
             marginRight: "8px",
             width: "80px",
-            textAlign: "right",
+            textAlign: "[right]",
           }}
         >
           Supplier
@@ -140,9 +141,12 @@ const Page2 = () => {
           style={{ margin: "auto" }}
           pagination={false}
           scroll={{ x: "max-content" }}
+        
           // rowClassName={() => "custom-row-height"} 
           // bordered
           size="small"
+          className="tableSearch"
+          // width=''
         />
         {/* 860 */}
         <Modal
@@ -176,7 +180,7 @@ const Page2 = () => {
             setOpen860(false); 
             setLoadingModal(true); 
           }}
-          width={1400}
+          width={'95%'}
         >
           <Table
             columns={columns860}
@@ -186,6 +190,7 @@ const Page2 = () => {
             scroll={{ x: "max-content" }}
             bordered
              size="small"
+             className="custom-bordered-table"
           />
         </Modal>
           {/* 856 */}
@@ -221,7 +226,7 @@ const Page2 = () => {
             setOpen856(false); 
             setLoadingModal(true); 
           }}
-          width={1400}
+          width={'95%'}
         >
           <Table
             columns={columns856}
@@ -230,7 +235,8 @@ const Page2 = () => {
             pagination={false}
             scroll={{ x: "max-content" }}
             bordered
-             size="small"
+            className="custom-bordered-table"
+            size="small"
           />
         </Modal>
         {/* 846 */}
@@ -265,7 +271,7 @@ const Page2 = () => {
             setOpen846(false); 
             setLoadingModal(true); 
           }}
-          width={1400}
+          width={'95%'}
         >
           <Table
             columns={columns846}
@@ -275,6 +281,7 @@ const Page2 = () => {
             scroll={{ x: "max-content" }}
             bordered
              size="small"
+               className="custom-bordered-table"
           />
         </Modal>
         {/* 810 */}
@@ -309,7 +316,7 @@ const Page2 = () => {
             setOpen810(false); 
             setLoadingModal(true); 
           }}
-          width={1400}
+          width={'95%'}
         >
           <Table
             columns={columns810}
@@ -319,6 +326,7 @@ const Page2 = () => {
             scroll={{ x: "max-content" }}
             bordered
              size="small"
+                className="custom-bordered-table"
           />
         </Modal>
       </div>
