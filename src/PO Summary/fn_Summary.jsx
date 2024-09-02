@@ -65,6 +65,7 @@ function fn_Summary() {
       });
     }
   };
+
   const columns = [
     {
       title: "No.",
@@ -142,6 +143,7 @@ function fn_Summary() {
 
   const Search = () => {
     setLoading(true)
+    setDataTable([])
     if (
       DateTo == null &&
       DateFrom == null &&
@@ -176,6 +178,7 @@ function fn_Summary() {
                   icon: "error",
                 });
                 setLoading(false);
+                
               }
         });
     }
